@@ -16,3 +16,5 @@ sitemap.xml.gz
 .DS_Store
 thumb.jpg
 dwsync.xml
+cookbooks
+tmp
