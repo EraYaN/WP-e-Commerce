@@ -369,7 +369,26 @@ class WPSC_Purchase_Log_Admin_Notification extends WPSC_Purchase_Log_Notificatio
 		$message .= __( 'Shipping', 'wpsc' ) . ': %shipping%' . "\r\n";
 		$message .= __( 'Total', 'wpsc' ) . ': %total%' . "\r\n";
 		$message .= __( 'Payment Method', 'wpsc' ) . ': %payment_method%' . "\r\n";
-
+		if($this->purchase_log->is_order_received())
+			$message .= __( 'Order Received', 'wpsc' );
+		else if($this->purchase_log->is_incomplete_sale())
+			$message .= __( 'Sale Incomplete', 'wpsc' );
+		else if($this->purchase_log->is_accepted_payment())
+			$message .= __( 'Accepted Payment', 'wpsc' );
+		else if($this->purchase_log->is_job_dispatched())
+			$message .= __( 'Job Dispachted', 'wpsc' );
+		else if($this->purchase_log->is_closed_order())
+			$message .= __( 'Closed Order', 'wpsc' );
+		else if($this->purchase_log->is_payment_declined())
+			$message .= __( 'Payment Declined', 'wpsc' );
+		else if($this->purchase_log->is_refunded())
+			$message .= __( 'Refunded', 'wpsc' );
+		else if($this->purchase_log->is_refund_pending())
+			$message .= __( 'Refund Pending', 'wpsc' );
+		else
+			$message .= 'Unknown';
+			
+			
 		if ( ! get_option( 'do_not_use_shipping' ) ) {
 			$message .= __( 'Shipping Method', 'wpsc' ) . ': %shipping_method%' . "\r\n";
 			$message .= __( 'Shipping Option', 'wpsc' ) . ': %shipping_option%' . "\r\n";

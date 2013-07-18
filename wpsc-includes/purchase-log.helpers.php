@@ -194,6 +194,8 @@ function _wpsc_action_update_purchase_log_status( $id, $status, $old_status, $pu
 	if ( $purchase_log->is_order_received() || $purchase_log->is_accepted_payment() ) {
 		wpsc_send_customer_email( $purchase_log );
 		wpsc_send_admin_email( $purchase_log );
+	} else {
+		wpsc_send_admin_email( $purchase_log );
 	}
 
 	if ( ! $purchase_log->is_transaction_completed() )
