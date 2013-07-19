@@ -755,7 +755,7 @@ class wpsc_cart {
             }
          } else {
             // select the shipping quote with lowest value
-            $min_value = false;
+            /*$min_value = false;
             $min_quote = '';
             $min_method = '';
             foreach ( (array) $custom_shipping as $shipping_module ) {
@@ -778,7 +778,7 @@ class wpsc_cart {
                $this->selected_shipping_method = $min_method;
                $this->shipping_quotes = $wpsc_shipping_modules[$this->selected_shipping_method]->getQuote();
                $this->selected_shipping_option = $min_quote;
-            }
+            }*/
          }
       }
   }
