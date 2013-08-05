@@ -369,6 +369,7 @@ class WPSC_Purchase_Log_Admin_Notification extends WPSC_Purchase_Log_Notificatio
 		$message .= __( 'Shipping', 'wpsc' ) . ': %shipping%' . "\r\n";
 		$message .= __( 'Total', 'wpsc' ) . ': %total%' . "\r\n";
 		$message .= __( 'Payment Method', 'wpsc' ) . ': %payment_method%' . "\r\n";
+		$message .= __( 'Order Status', 'wpsc' ) . ': ';
 		if($this->purchase_log->is_order_received())
 			$message .= __( 'Order Received', 'wpsc' );
 		else if($this->purchase_log->is_incomplete_sale())
